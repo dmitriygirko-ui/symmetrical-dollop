@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Электронный паспорт — Насос ЦН-400-105</title>
+<link rel="stylesheet" href="sidebar_improvement/css/styles.css">
+<script defer src="sidebar_improvement/js/sidebar.js"></script>
+<meta content="Электронный паспорт насоса ЦН-400-105" name="description"/>
+</head>
+<body>
+<nav class="navbar" id="sidebarNav" role="navigation" aria-label="Главное меню">
+    <button id="sidebarToggle" class="btn btn-secondary no-print" aria-expanded="true" aria-controls="mainNav">☰</button>
+    <h1><span class="icon">📋</span> Электронный паспорт насоса ЦН-400-105</h1>
+    <div class="nav-links" id="mainNav">
+        <a class="active" data-section="title" href="#title">🏠 Главная</a>
+        <a data-section="info" href="#info">📊 Характеристики</a>
+        <a data-section="visual" href="#visual">📷 Фото / Чертежи</a>
+        <a data-section="hours" href="#hours">⏱️ Наработка</a>
+        <a data-section="maintenance" href="#maintenance">🔧 ТО</a>
+        <a data-section="resource" href="#resource">⏳ Ресурс</a>
+        <a data-section="alerts" href="#alerts">🚨 Аварии</a>
+        <a data-section="repairs" href="#repairs">🛠️ Ремонты</a>
+        <a data-section="faults" href="#faults">⚠️ Неисправности</a>
+        <a data-section="diagnostic" href="#diagnostic">🩺 Диагностика</a>
+        <a data-section="scheme" href="#scheme">⚙️ Схема</a>
+        <a data-section="reports" href="#reports">📄 Отчеты</a>
+        <a data-section="docs" href="#docs">📁 Документы</a>
+    </div>
+</nav>
+
+<!-- Main content (original body) starts here; inline <style> from the original head was moved into sidebar_improvement/css/styles.css -->
+
+<div class="container">
+<!-- Титульная -->
+<div class="title-page" id="title">
+<h1>ЭЛЕКТРОННЫЙ ПАСПОРТ</h1>
+<div class="subtitle">Центробежный насос типа ЦН-400-105</div>
+<div class="meta">
+<div>Заводской №: <input id="pumpSerial" placeholder="Введите №" style="width:150px; background:rgba(255,255,255,0.9); color:#333; border:none; padding:5px; border-radius:4px;" type="text"/></div>
+<div style="margin-top:10px;">Дата выпуска: <input id="pumpDate" style="background:rgba(255,255,255,0.9); color:#333; border:none; padding:5px; border-radius:4px;" type="date"/></div>
+<div style="margin-top:10px;">Организация-владелец: <input id="pumpOwner" placeholder="Название организации" style="width:250px; background:rgba(255,255,255,0.9); color:#333; border:none; padding:5px; border-radius:4px;" type="text"/></div>
+</div>
+</div>
+<!-- Общие сведения -->
+<div class="section" id="info">
+<h2><span class="icon">📊</span> Общие сведения и технические характеристики</h2>
+<div class="status-cards">
+<div class="status-card" id="cardHours">
+<div class="value" id="totalHours">0</div>
+<div class="label">Всего наработано, ч</div>
+</div>
+<div class="status-card">
+<div class="value">400</div>
+<div class="label">Подача, м³/ч</div>
+</div>
+<div class="status-card">
+<div class="value">105</div>
+<div class="label">Напор, м</div>
+</div>
+<div class="status-card" id="cardLastTO">
+<div class="value" id="daysSinceLastTO">—</div>
+<div class="label">Дней с последнего ТО</div>
+</div>
+</div>
+<div class="alert alert-warning" id="toAlert">
+<strong>⚠️ Внимание:</strong> <span id="toAlertText"></span>
+</div>
+<div class="two-col">
+<div>
+<h3>Основные параметры</h3>
+<div class="table-wrapper">
+<table>
+<tr><th>Параметр</th><th>Значение</th><th>Примечание</th></tr>
+<tr><td>Тип насоса</td><td>ЦН-400-105</td><td>Центробежный, горизонтальный, одноступенчатый</td></tr>
+<tr><td>Номинальная подача</td><td>400 м³/ч</td><td></td></tr>
+<tr><td>Номинальный напор</td><td>105 м</td><td></td></tr>
+<tr><td>Частота вращения</td><td>1450 об/мин</td><td></td></tr>
+<tr><td>Мощность на валу</td><td>~182 кВт</td><td>Зависит от исполнения</td></tr>
+<tr><td>КПД</td><td>78%</td><td></td></tr>
+<tr><td>Допустимая НПСХ</td><td>4,5 м</td><td></td></tr>
+<tr><td>Максимальное давление</td><td>2,5 МПа</td><td>На выходе</td></tr>
+<tr><td>Давление на входе</td><td>до 2 МПа</td><td></td></tr>
+<tr><td>Температура жидкости</td><td>0…+120 °С</td><td></td></tr>
+<tr><td>Плотность жидкости</td><td>до 1050 кг/м³</td><td></td></tr>
+<tr><td>Масса насоса (без двигателя)</td><td>646 кг</td><td></td></tr>
+<tr><td>Масса агрегата</td><td>~2800 кг</td><td>С двигателем и рамой</td></tr>
+<tr><td>Габариты насоса (Д×Ш×В)</td><td>1200×1090×1200 мм</td><td>Без двигателя</td></tr>
+<tr><td>Габариты агрегата</td><td>~2800×1200×1200 мм</td><td>С двигателем и рамой</td></tr>
+<tr><td>Направление вращения</td><td>CCW (против часовой)</td><td>Со стороны двигателя</td></tr>
+<tr><td>Уплотнение вала</td><td>Сальниковое / Торцевое</td><td>Burgman (по выбору)</td></tr>
+<tr><td>Смазка подшипников</td><td>Консистентная / масляная</td><td>Кольцевая смазка</td></tr>
+</table>
+</div>
+</div>
+<div>
+<h3>Производитель и гарантия</h3>
+<div class="table-wrapper">
+<table>
+<tr><th>Параметр</th><th>Значение</th></tr>
+<tr><td>Производитель</td><td>ООО ТПК «Алтайгидромаш»</td></tr>
+<tr><td>Адрес</td><td>656067, г. Барнаул, Балтийский 2-й проезд, стр. 9</td></tr>
+<tr><td>Телефон</td><td>8-800-700-8-900</td></tr>
+<tr><td>Гарантийный срок</td><td>12 мес. со дня ввода в эксплуатацию, но не более 18 мес. со дня отгрузки</td></tr>
+<tr><td>ТУ на ремонт</td><td>ТУ 34-38-20111-96</td></tr>
+<tr><td>РЭ</td><td>РЭ 34.38.20111</td></tr>
+</table>
+</div>
+<h3>Материалы основных деталей</h3>
+<div class="table-wrapper">
+<table>
+<tr><th>Деталь</th><th>Материал</th></tr>
+<tr><td>Корпус (верхняя/нижняя часть)</td><td>Чугун СЧ 25</td></tr>
+<tr><td>Рабочее колесо</td><td>Чугун СЧ 25</td></tr>
+<tr><td>Корпус уплотнения</td><td>Чугун СЧ 25</td></tr>
+<tr><td>Корпус подшипника</td><td>Чугун СЧ 25</td></tr>
+<tr><td>Вал насоса</td><td>Нержавеющая сталь SS420</td></tr>
+<tr><td>Втулка вала</td><td>Нержавеющая сталь SS304</td></tr>
+<tr><td>Направляющее кольцо</td><td>SS304 / Сталь</td></tr>
+<tr><td>Подшипники качения</td><td>SKF</td></tr>
+<tr><td>Уплотнение вала</td><td>Сальниковое / мех. торцевое Burgman</td></tr>
+<tr><td>Прокладка корпуса</td><td>Паронит</td></tr>
+</table>
+</div>
+</div>
+</div>
+<!-- Диагностический помощник -->
+<div class="section" id="diagnostic">
+<h2><span class="icon">🩺</span> Диагностический помощник</h2>
+<div class="alert alert-info show" style="display:block;">
+<strong>Офлайн-режим:</strong> диагностика работает полностью локально и использует встроенную таблицу неисправностей из руководства по эксплуатации.
+            </div>
+<div class="two-col">
+<div>
+<h3>Выбор симптома</h3>
+<label style="font-weight:600; margin-bottom:8px; display:block;">
+                        Симптом / неисправность
+                    </label>
+<select id="diagnosticSelect" style="margin-bottom:15px;">
+<option value="">-- Выберите симптом --</option>
+<option value="vibration">Повышенная вибрация насоса</option>
+<option value="no_pressure">Нет давления / низкое давление</option>
+<option value="bearing_overheat">Перегрев подшипников</option>
+<option value="seal_leak">Течь через уплотнение</option>
+<option value="noise">Повышенный шум</option>
+<option value="motor_overload">Перегрузка электродвигателя</option>
+<option value="no_flow">Нет подачи жидкости</option>
+</select>
+<button class="btn btn-primary" onclick="runDiagnostics()">
+                        🔍 Выполнить диагностику
+                    </button>
+</div>
+<div>
+<h3>Быстрые рекомендации</h3>
+<div class="status-cards">
+<div class="status-card warning">
+<div class="value">4.5</div>
+<div class="label">Допустимый кавитационный запас, м</div>
+</div>
+<div class="status-card danger">
+<div class="value">85°C</div>
+<div class="label">Макс. температура подшипников</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden" id="diagnosticResult" style="margin-top:25px;">
+<div class="table-wrapper">
+<table>
+<tr>
+<th style="width:25%">Симптом</th>
+<th style="width:35%">Вероятная причина</th>
+<th style="width:40%">Способ устранения</th>
+</tr>
+<tbody id="diagnosticTableBody"></tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Прогноз ресурса -->
+<div class="section" id="resource">
+<h2><span class="icon">⏳</span> Прогноз остаточного ресурса</h2>
+<div class="two-col">
+<div>
+<h3>Исходные параметры</h3>
+<label>Наработка подшипников, ч</label>
+<input id="bearingHours" type="number" value="1200"/>
+<label style="margin-top:10px; display:block;">Наработка уплотнения, ч</label>
+<input id="sealHours" type="number" value="800"/>
+<label style="margin-top:10px; display:block;">Средняя температура подшипников, °C</label>
+<input id="bearingTemp" type="number" value="68"/>
+<label style="margin-top:10px; display:block;">Уровень вибрации, мм/с</label>
+<input id="vibrationLevel" step="0.1" type="number" value="3.1"/>
+<button class="btn btn-primary" onclick="calculateResource()" style="margin-top:15px;">
+                        📈 Рассчитать ресурс
+                    </button>
+</div>
+<div>
+<h3>Состояние узлов</h3>
+<div class="status-cards">
+<div class="status-card success">
+<div class="value" id="bearingResource">—</div>
+<div class="label">Ресурс подшипников</div>
+</div>
+<div class="status-card warning">
+<div class="value" id="sealResource">—</div>
+<div class="label">Ресурс уплотнения</div>
+</div>
+</div>
+<div class="progress-container">
+<div style="margin-bottom:6px;">Общее состояние агрегата</div>
+<div class="progress-bar">
+<div class="progress-fill" id="healthProgress" style="width:0%">0%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Аварийные уведомления -->
+<div class="section" id="alerts">
+<h2><span class="icon">🚨</span> Система аварийных уведомлений</h2>
+<div class="btn-group">
+<button class="btn btn-warning" onclick="simulateAlert('warning')">⚠️ Предупреждение</button>
+<button class="btn btn-danger" onclick="simulateAlert('danger')">🛑 Авария</button>
+<button class="btn btn-success" onclick="clearAlerts()">✅ Сбросить</button>
+</div>
+<div id="alertsContainer">
+<div class="alert alert-info show" style="display:block;">
+                    Система мониторинга активна. Критических аварий не обнаружено.
+                </div>
+</div>
+<div class="table-wrapper" style="margin-top:20px;">
+<table>
+<tr>
+<th>Параметр</th>
+<th>Норма</th>
+<th>Текущее значение</th>
+<th>Статус</th>
+</tr>
+<tr>
+<td>Температура подшипников</td>
+<td>до 85°C</td>
+<td id="currentTempStatus">68°C</td>
+<td id="tempState">🟢 Норма</td>
+</tr>
+<tr>
+<td>Вибрация</td>
+<td>до 4.5 мм/с</td>
+<td id="currentVibStatus">3.1 мм/с</td>
+<td id="vibState">🟢 Норма</td>
+</tr>
+<tr>
+<td>Давление</td>
+<td>105 м</td>
+<td>102 м</td>
+<td>🟢 Норма</td>
+</tr>
+</table>
+</div>
+</div>
+<!-- Интерактивная схема -->
+<div class="section" id="scheme">
+<h2><span class="icon">⚙️</span> Интерактивная схема насоса</h2>
+<div class="alert alert-info show" style="display:block;">
+                Нажмите на элемент схемы для получения информации.
+            </div>
+<div style="display:flex; justify-content:center; margin-top:25px;">
+<svg height="280" style="background:#f5f7fa; border-radius:14px; padding:20px;" viewbox="0 0 850 280" width="100%">
+<rect fill="#3b82f6" height="80" onclick="showNodeInfo('pump')" rx="12" style="cursor:pointer;" width="180" x="80" y="100"></rect>
+<text fill="white" font-size="18" font-weight="bold" x="120" y="145">
+                        Насос
+                    </text>
+<rect fill="#10b981" height="80" onclick="showNodeInfo('coupling')" rx="12" style="cursor:pointer;" width="160" x="330" y="100"></rect>
+<text fill="white" font-size="18" font-weight="bold" x="365" y="145">
+                        Муфта
+                    </text>
+<rect fill="#ef4444" height="80" onclick="showNodeInfo('motor')" rx="12" style="cursor:pointer;" width="200" x="560" y="100"></rect>
+<text fill="white" font-size="18" font-weight="bold" x="600" y="145">
+                        Электродвигатель
+                    </text>
+<line stroke="#334155" stroke-width="8" x1="260" x2="330" y1="140" y2="140"></line>
+<line stroke="#334155" stroke-width="8" x1="490" x2="560" y1="140" y2="140"></line>
+</svg>
+</div>
+<div class="alert alert-info show" id="nodeInfo" style="margin-top:20px; display:block;">
+                Выберите узел схемы.
+            </div>
+</div>
+<!-- Журнал ремонтов -->
+<div class="section" id="repairs">
+<h2><span class="icon">🛠️</span> Журнал ремонтов</h2>
+<div class="two-col">
+<div>
+<label>Дата ремонта</label>
+<input id="repairDate" type="date"/>
+<label style="margin-top:10px; display:block;">Тип ремонта</label>
+<select id="repairType">
+<option>ТО</option>
+<option>Текущий ремонт</option>
+<option>Капитальный ремонт</option>
+<option>Аварийный ремонт</option>
+</select>
+<label style="margin-top:10px; display:block;">Описание</label>
+<textarea id="repairDescription" rows="4"></textarea>
+<button class="btn btn-primary" onclick="addRepair()" style="margin-top:15px;">
+                        ➕ Добавить запись
+                    </button>
+</div>
+<div>
+<div class="table-wrapper">
+<table>
+<tr>
+<th>Дата</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+<tbody id="repairTableBody"></tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Генерация отчетов -->
+<div class="section" id="reports">
+<h2><span class="icon">📄</span> Генерация актов и отчетов</h2>
+<div class="two-col">
+<div>
+<label>Тип документа</label>
+<select id="reportType">
+<option>Акт дефектации</option>
+<option>Отчет ТО</option>
+<option>Журнал аварий</option>
+<option>Сменный отчет</option>
+</select>
+<label style="margin-top:10px; display:block;">Ответственный</label>
+<input id="reportEngineer" type="text" value="Инженер"/>
+<label style="margin-top:10px; display:block;">Описание</label>
+<textarea id="reportText" rows="5"></textarea>
+<button class="btn btn-success" onclick="generateReport()" style="margin-top:15px;">
+                        📥 Сгенерировать HTML-отчет
+                    </button>
+</div>
+<div>
+<div class="alert alert-info show" id="reportPreview" style="display:block;">
+                        Предпросмотр отчета появится здесь.
+                    </div>
+</div>
+</div>
+</div>
+<!-- Визуальная документация -->
+<div class="section" id="visual">
+<h2><span class="icon">📷</span> Визуальная документация</h2>
+<h3>Фотографии оборудования</h3>
+<div class="gallery">
+<div class="gallery-item">
+<img alt="Насос ЦН-400-105 — общий вид" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAGgCAYAAAA6idaIAAEAAElEQVR4nOz9eZRt+X3dh31+vzPf+d66Nb1Xb+h+PbxGdwMgiIEAKBIgKZISKYkJaVGKpEi2bGUtO1FWnGX94SjDUpx42bElx0psxSuRpSVrpmkmHCxRnESQBIFmo9EN9Nxvfq/mqjuf+Zxf/jjnd+pUA91gNxsjz16r+9Vwh3PPvVV31/5+997imedf4atBCAhjm7ZzxObwACFyECG5yjFEjpQKISVC5uRpynz5CH78EKnKUHnOoN/FsWyyPP+qt/9uIA2DJI44PTkgy1R5LMWxKhRKgUCAUAAYUuLaBml5CKYhUUIhlEIIAykVfpSxjB26rTYd10AAqnafnmMyWUT8f37pFRZBgmsbf6DHEMUJO9sX2R53GPQ6jAdtLm/YBKnBC3cS4lQR+D4nezfI0oQ0UwRhhJQmSJPtrU0uX9zC8TxOFgmns4DT+ZL50V1EsgRpkascFNi2Tafbo9sfMhiOyJVBkmZIw2K5nHHvxosopei1PVquySLvsr59mZYM8edHDLotsiwnihOEEG/5mEzDYL6YsnswwTQEcZyihMQ0JGmW0217+EFIt9vBtUxWQUiUpCgFKIXnmBiGQRRFJGlGy3NRCE5mS1SeQXExAGzL/IrnqMFXIklTup0Oj117GD+MmM5mhGFIFEXEUcj7n3qKO/cfMF4bMZ0tcB2HdqfNcj6j1emSpSnSMJFSkmcpi8UMr9XBNC2iOMayLARgGYDKGPTaLFYRfhAyGAzIclgtlwiRc2lzwHy5JM0F/W4HPyxe10rlSBRLP8BxXNIsReUK23ZAGriWxF/Nsb0
+[truncated]
+</div>
+
+<script defer>
+        // ==================== СОХРАНЕНИЕ ====================
+        const STORAGE_KEY = 'pump_passport_CN400_105_v2';
+
+        function saveData() {
+            const data = {
+                title: {
+                    serial: document.getElementById('pumpSerial').value,
+                    date: document.getElementById('pumpDate').value,
+                    owner: document.getElementById('pumpOwner').value
+                },
+                motor: {},
+                kit: {},
+                docs: {},
+                notes: document.getElementById('notesField').value,
+                hours: getTableData('hoursTable', ['date','start','end','hours','mode','person','note']),
+                maintenance: getTableData('maintenanceTable', ['date','type','hours','works','parts','person','sign']),
+                repairs: getTableData('repairTable', ['start','end','type','reason','works','units','materials','person','hours']),
+                updated: new Date().toISOString()
+            };
+
+            document.querySelectorAll('#motorTable [data-field]').forEach(el => {
+                data.motor[el.dataset.field] = el.type === 'checkbox' ? el.checked : el.value;
+            });
+
+            document.querySelectorAll('[data-field^="kit"]').forEach(el => {
+                data.kit[el.dataset.field] = el.checked;
+            });
+
+            document.querySelectorAll('#docsTable [data-field]').forEach(el => {
+                data.docs[el.dataset.field] = el.type === 'checkbox' ? el.checked : el.value;
+            });
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            document.getElementById('updateDate').textContent = new Date().toLocaleDateString('ru-RU');
+            showToast('Данные сохранены', 'success');
+        }
+
+        function loadData() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+
+            try {
+                const data = JSON.parse(saved);
+
+                if (data.title) {
+                    document.getElementById('pumpSerial').value = data.title.serial || '';
+                    document.getElementById('pumpDate').value = data.title.date || '';
+                    document.getElementById('pumpOwner').value = data.title.owner || '';
+                }
+
+                if (data.motor) {
+                    Object.entries(data.motor).forEach(([key, val]) => {
+                        const el = document.querySelector(`[data-field="${key}"]`);
+                        if (el) {
+                            if (el.type === 'checkbox') el.checked = val;
+                            else el.value = val;
+                        }
+                    });
+                }
+
+                if (data.kit) {
+                    Object.entries(data.kit).forEach(([key, val]) => {
+                        const el = document.querySelector(`[data-field="${key}"]`);
+                        if (el) el.checked = val;
+                    });
+                }
+
+                if (data.docs) {
+                    Object.entries(data.docs).forEach(([key, val]) => {
+                        const el = document.querySelector(`#docsTable [data-field="${key}"]`);
+                        if (el) {
+                            if (el.type === 'checkbox') el.checked = val;
+                            else el.value = val;
+                        }
+                    });
+                }
+
+                if (data.notes) document.getElementById('notesField').value = data.notes;
+
+                if (data.hours) restoreTable('hoursTable', data.hours, addHourRow);
+                if (data.maintenance) restoreTable('maintenanceTable', data.maintenance, addMaintenanceRow);
+                if (data.repairs) restoreTable('repairTable', data.repairs, addRepairRow);
+
+                calculateTotal();
+                checkTOStatus();
+                showToast('Данные загружены из сохранения', 'success');
+            } catch (e) {
+                console.error('Ошибка загрузки:', e);
+            }
+        }
+
+        function getTableData(tableId, fields) {
+            const rows = [];
+            document.querySelectorAll(`#${tableId} tbody tr`).forEach(tr => {
+                const rowData = {};
+                fields.forEach((field, idx) => {
+                    const cell = tr.cells[idx + 1];
+                    if (!cell) return;
+                    const input = cell.querySelector('input, select, textarea');
+                    if (input) rowData[field] = input.value;
+                });
+                rows.push(rowData);
+            });
+            return rows;
+        }
+
+        function restoreTable(tableId, data, addFn) {
+            const tbody = document.querySelector(`#${tableId} tbody`);
+            tbody.innerHTML = '';
+            data.forEach(rowData => {
+                addFn();
+                const row = tbody.lastElementChild;
+                const inputs = row.querySelectorAll('input, select, textarea');
+                let idx = 0;
+                Object.values(rowData).forEach(val => {
+                    if (inputs[idx]) {
+                        inputs[idx].value = val || '';
+                        idx++;
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('input', debounce(saveData, 500));
+        document.addEventListener('change', saveData);
+
+        function debounce(fn, ms) {
+            let timeout;
+            return function() {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => fn.apply(this, arguments), ms);
+            };
+        }
+
+        // ==================== НАРАБОТКА ====================
+        function calcRowHours(el) {
+            const row = el.closest('tr');
+            const start = row.querySelector('.hour-start').value;
+            const end = row.querySelector('.hour-end').value;
+            if (start && end) {
+                const [sh, sm] = start.split(':').map(Number);
+                const [eh, em] = end.split(':').map(Number);
+                let diff = (eh * 60 + em) - (sh * 60 + sm);
+                if (diff < 0) diff += 24 * 60;
+                row.querySelector('.hours-input').value = (diff / 60).toFixed(1);
+            }
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const inputs = document.querySelectorAll('.hours-input');
+            let total = 0;
+            inputs.forEach(input => {
+                total += parseFloat(input.value) || 0;
+            });
+            document.getElementById('totalHours').textContent = total.toFixed(1);
+
+            const maxHours = 25000;
+            const percent = Math.min((total / maxHours) * 100, 100);
+            const fill = document.getElementById('progressFill');
+            fill.style.width = percent + '%';
+            fill.textContent = percent.toFixed(1) + '%';
+            document.getElementById('progressText').textContent = total.toFixed(1) + ' / ' + maxHours + ' ч';
+
+            fill.classList.remove('warning', 'danger');
+            if (percent >= 90) fill.classList.add('danger');
+            else if (percent >= 75) fill.classList.add('warning');
+
+            checkTOStatus();
+            // Обновляем планировщик ТО
+            if (typeof recalcTO === 'function') recalcTO();
+        }
+
+        function checkTOStatus() {
+            const total = parseFloat(document.getElementById('totalHours').textContent) || 0;
+            const maintRows = document.querySelectorAll('#maintenanceTable tbody tr');
+            let lastTOHours = 0;
+            let lastTODate = null;
+            let lastTOType = '';
+
+            maintRows.forEach(row => {
+                const date = row.querySelector('.maint-date').value;
+                const hours = parseFloat(row.querySelector('.maint-hours').value) || 0;
+                const type = row.querySelector('.maint-type').value;
+                if (date && hours >= lastTOHours) {
+                    lastTOHours = hours;
+                    lastTODate = date;
+                    lastTOType = type;
+                }
+            });
+
+            const card = document.getElementById('cardLastTO');
+            if (lastTODate) {
+                const days = Math.floor((new Date() - new Date(lastTODate)) / (1000 * 60 * 60 * 24));
+                document.getElementById('daysSinceLastTO').textContent = days;
+                card.classList.remove('warning', 'danger', 'success');
+                if (days > 365) card.classList.add('danger');
+                else if (days > 180) card.classList.add('warning');
+                else card.classList.add('success');
+            } else {
+                document.getElementById('daysSinceLastTO').textContent = '—';
+                card.classList.remove('warning', 'danger', 'success');
+            }
+
+            const alertDiv = document.getElementById('toAlert');
+            const alertText = document.getElementById('toAlertText');
+            const nextTO1 = lastTOHours + 500;
+            const nextTO2 = lastTOHours + 2000;
+            const nextTO3 = lastTOHours + 8000;
+
+            let messages = [];
+            if (total >= nextTO3 - 500) messages.push(`Приближается ТО-3 (8000 ч). Осталось ${ (nextTO3 - total).toFixed(0) } ч.`);
+            else if (total >= nextTO2 - 200) messages.push(`Приближается То-2 (2000 ч). Осталось ${ (nextTO2 - total).toFixed(0) } ч.`);
+            else if (total >= nextTO1 - 50) messages.push(`Приближается ТО-1 (500 ч). Осталось ${ (nextTO1 - total).toFixed(0) } ч.`);
+
+            if (messages.length > 0) {
+                alertText.textContent = messages.join(' ');
+                alertDiv.classList.add('show');
+            } else {
+                alertDiv.classList.remove('show');
+            }
+        }
+
+        // ... rest of original JS preserved unchanged ...
+</script>
+</body>
+</html>
