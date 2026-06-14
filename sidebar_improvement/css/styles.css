@@ -1,0 +1,288 @@
+/* Sidebar overrides and enhancements */
+:root{
+    --sidebar-width: 260px;
+    --sidebar-collapsed: 64px;
+    --primary: #1a5276;
+    --secondary: #2980b9;
+    --accent: #e74c3c;
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --text: #2c3e50;
+    --border: #dee2e6;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+}
+
+/* Make navbar a fixed left sidebar */
+.navbar {
+    background: var(--primary) !important;
+    color: white !important;
+    padding: 20px 16px !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: var(--sidebar-width) !important;
+    height: 100vh !important;
+    z-index: 1000 !important;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.12) !important;
+    overflow-y: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.navbar h1 { font-size: 1rem !important; margin-bottom: 18px !important; }
+.navbar .nav-links { display: flex !important; flex-direction: column !important; gap: 8px !important; }
+.navbar .nav-links a { display: block !important; padding: 10px 12px !important; border-radius: 8px !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Main container shift */
+.container { margin-left: calc(var(--sidebar-width) + 20px) !important; }
+
+/* Collapsed sidebar */
+body.sidebar-collapsed .navbar { width: var(--sidebar-collapsed) !important; }
+body.sidebar-collapsed .navbar h1 span, body.sidebar-collapsed .navbar h1 .icon { display: inline-block; }
+body.sidebar-collapsed .navbar h1 { white-space: nowrap; overflow: hidden; text-overflow: clip; }
+body.sidebar-collapsed .navbar .nav-links a { text-indent: -9999px; padding-left: 12px !important; }
+body.sidebar-collapsed .container { margin-left: calc(var(--sidebar-collapsed) + 20px) !important; }
+
+/* Toggle button inside navbar */
+#sidebarToggle { margin-bottom: 12px; align-self: flex-start; }
+
+/* Mobile: turn navbar into top bar */
+@media (max-width: 768px) {
+    .navbar { position: relative !important; width: 100% !important; height: auto !important; flex-direction: row !important; align-items: center !important; padding: 10px 12px !important; }
+    .navbar h1 { margin-bottom: 0 !important; font-size: 1rem !important; }
+    .navbar .nav-links { flex-direction: row !important; gap: 6px !important; margin-left: 12px !important; overflow-x: auto; }
+    .container { margin-left: 0 !important; padding-top: 12px !important; }
+}
+
+/* Improve small-screen tap targets and remove large left margin */
+@media (max-width: 480px) {
+    .navbar .nav-links a { padding: 10px !important; font-size: 0.95rem !important; }
+    .title-page h1 { font-size: 1.6rem; }
+    .table-wrapper { min-width: 100% !important; }
+}
+
+/* Print hide sidebar */
+@media print {
+    .navbar { display: none !important; }
+    .container { margin-left: 0 !important; }
+}
+
+/* Utility: hide interactive UI elements when printing */
+@media print {
+    .no-print { display: none !important; }
+    input, select, textarea, button { border: none !important; box-shadow: none !important; }
+    .table-wrapper { box-shadow: none !important; border: none !important; }
+}
+
+/* When collapsed show only icons (attempt to hide text while keeping emoji/icon visible) */
+body.sidebar-collapsed .nav-links a { position: relative; }
+body.sidebar-collapsed .nav-links a::after { content: '' ; display: none; }
+
+/* Ensure focus outlines remain visible in collapsed state */
+body.sidebar-collapsed .nav-links a:focus { outline: 3px solid rgba(255,255,255,0.18); }
+
+/* Focus styles for accessibility */
+.nav-links a:focus { outline: 3px solid rgba(99,102,241,0.3); }
+#sidebarToggle:focus { outline: 3px solid rgba(255,255,255,0.25); }
+
+/* --- Original inline styles from Готовый_проект_исправленный_v2.html --- */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.navbar {
+    background: var(--primary);
+    color: white;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar h1 {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+    scroll-margin-top: 120px;
+}
+
+.section h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section h3 {
+    color: var(--secondary);
+    margin: 20px 0 10px 0;
+}
+
+.title-page {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.title-page h1 { font-size: 2.5rem; margin-bottom: 15px; }
+.title-page .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+.title-page .meta {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    min-width: 600px;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+tr:nth-child(even) { background: #f8f9fa; }
+tr:hover { background: #e8f4f8; }
+
+input[type="text"], input[type="date"], input[type="number"], input[type="time"],
+textarea, select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border 0.3s;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(41,128,185,0.1);
+}
+
+textarea { resize: vertical; min-height: 60px; }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary { background: var(--secondary); color: white; }
+.btn-primary:hover { background: var(--primary); }
+.btn-success { background: var(--success); color: white; }
+.btn-success:hover { background: #219a52; }
+.btn-warning { background: var(--warning); color: white; }
+.btn-warning:hover { background: #d68910; }
+.btn-danger { background: var(--danger); color: white; }
+.btn-danger:hover { background: #c0392b; }
+.btn-secondary { background: #6c757d; color: white; }
+.btn-secondary:hover { background: #5a6268; }
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+/* end of extracted original CSS */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.status-card {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+/* end of extracted original CSS */
+
